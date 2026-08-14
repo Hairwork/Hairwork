@@ -688,10 +688,10 @@ function PostJobForm({ currentUser, onPost, onClose }) {
         },
         body: JSON.stringify({ salonName: form.salon, jobTitle: form.title }),
       });
-      if (!res.ok) throw new Error("Payment server error. Please try again.");
-      const data = await res.json();
-      if (!data.clientSecret) throw new Error("No client secret returned.");
-      // Payment intent created successfully — mark as paid and publish
+      const responseText = await res.text();
+      if (!res.ok) throw new Error(`Server error ${res.status}: ${responseText}`);
+      const data = JSON.parse(responseText);
+      if (!data.clientSecret) throw new Error(`No client secret: ${responseText}`);
       setPaying(false);
       setStep("success");
       setTimeout(() => {
