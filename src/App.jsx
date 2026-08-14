@@ -28,28 +28,11 @@ const C = {
 };
 
 // ─── Seed data ────────────────────────────────────────────────────────────────
-const SEED_JOBS = [
-  { id:"j1", title:"Senior Barber", salon:"Gentleman's Quarter", location:"London, UK", type:"Full-Time", salary:"£32,000–£40,000", posted:"2d ago", logo:"✂️", category:"Barbers", tags:["Fades","Classic Cuts","Hot Towel Shave"], description:"We're looking for an experienced barber to join our award-winning Central London shop. Must be confident with skin fades and traditional wet shaves.", applicants:14, postedBy:"owner1" },
-  { id:"j2", title:"Colour Specialist", salon:"Mane Attraction Studio", location:"Manchester, UK", type:"Full-Time", salary:"£28,000–£36,000", posted:"5d ago", logo:"🎨", category:"Hairdressers", tags:["Balayage","Colour Correction","Highlights"], description:"Join our vibrant creative team! You'll specialise in complex colour services including balayage, toning, and colour corrections for a diverse clientele.", applicants:27, postedBy:"owner1" },
-  { id:"j3", title:"Freelance Stylist", salon:"The Loft Hair Co.", location:"Bristol, UK", type:"Freelance", salary:"60% commission", posted:"1d ago", logo:"💈", category:"Hairdressers", tags:["Braids","Natural Hair","Extensions"], description:"Flexible chair rental or commission split available in our modern studio. Ideal for self-motivated stylists with an existing clientele.", applicants:8, postedBy:"owner2" },
-  { id:"j4", title:"Junior Stylist", salon:"Scissor Sisters Salon", location:"Edinburgh, UK", type:"Part-Time", salary:"£18,000–£22,000", posted:"1w ago", logo:"🪮", category:"Hairdressers", tags:["Blow-Dry","Wedding Hair","Styling"], description:"Perfect first step for a newly qualified stylist. We offer mentoring, regular training days and a supportive team environment.", applicants:41, postedBy:"owner2" },
-  { id:"j5", title:"Barber Shop Manager", salon:"Kings of Cuts", location:"Birmingham, UK", type:"Full-Time", salary:"£38,000–£45,000", posted:"3d ago", logo:"👑", category:"Barbers", tags:["Management","Team Leadership","Scheduling"], description:"We need a confident manager to run day-to-day operations of our busy 6-chair barbershop. Barbering experience required.", applicants:6, postedBy:"owner1" },
-  { id:"j6", title:"Nail & Hair Technician", salon:"Bliss Beauty Bar", location:"Leeds, UK", type:"Full-Time", salary:"£24,000–£30,000", posted:"4d ago", logo:"💅", category:"Hairdressers", tags:["Gel Nails","Hair Treatments","Keratin"], description:"Dual-skilled professional needed for our expanding beauty bar. Nail qualifications are a must; hair qualifications a big plus.", applicants:19, postedBy:"owner2" },
-  { id:"j7", title:"Master Barber", salon:"The Fade Factory", location:"Leeds, UK", type:"Full-Time", salary:"£35,000–£42,000", posted:"1d ago", logo:"✂️", category:"Barbers", tags:["Skin Fades","Beard Trims","Lineups"], description:"The Fade Factory is looking for a master barber to join our busy team. Must have at least 5 years experience and a strong client following.", applicants:9, postedBy:"owner2" },
-  { id:"j8", title:"Bridal Hair Stylist", salon:"Bliss Beauty Bar", location:"London, UK", type:"Freelance", salary:"£300–£500/day", posted:"3d ago", logo:"💇", category:"Hairdressers", tags:["Bridal","Updos","Extensions"], description:"Experienced bridal stylist needed for weekend bookings. Must be comfortable travelling to venues across London and the Home Counties.", applicants:22, postedBy:"owner1" },
-];
+const SEED_JOBS = [];
 
-const SEED_PROFILES = [
-  { id:"u1", name:"Jade Okonkwo", role:"Master Barber", location:"London", initials:"JO", type:"worker", bio:"Award-winning barber with 8 years experience. Specialist in skin fades, lineups, and traditional wet shaves. Open to senior roles.", skills:["Fades","Lineups","Braids","Hot Towel Shave"], portfolio:["https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=300&h=300&fit=crop"] },
-  { id:"u2", name:"Marco Ferretti", role:"Colour Technician", location:"Manchester", initials:"MF", type:"worker", bio:"Creative colourist passionate about balayage, colour corrections, and fashion shades. 5 years in high-end salons.", skills:["Balayage","Bleach & Tone","Highlights","Colour Correction"], portfolio:["https://images.unsplash.com/photo-1560869713-da86bd7f2b4d?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1562322140-8baeececf3df?w=300&h=300&fit=crop"] },
-  { id:"u3", name:"Priya Mehta", role:"Bridal Stylist", location:"Birmingham", initials:"PM", type:"worker", bio:"Specialist in bridal and occasion hair. Experienced with all hair textures. Available for freelance weddings and full-time studio roles.", skills:["Updos","Extensions","Blow-Dry","Braids"], portfolio:["https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=300&h=300&fit=crop","https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=300&h=300&fit=crop"] },
-];
+const SEED_PROFILES = [];
 
-const SEED_MESSAGES = [
-  { id:"m1", from:"owner1", to:"u1", fromName:"Gentleman's Quarter", text:"Hi Jade, we'd love to have you come in for a trial day. Would next Tuesday work?", time:"10:32 AM" },
-  { id:"m2", from:"u1", to:"owner1", fromName:"Jade Okonkwo", text:"That sounds great! Tuesday works perfectly for me.", time:"11:15 AM" },
-  { id:"m3", from:"owner2", to:"u2", fromName:"The Loft Hair Co.", text:"Marco, your portfolio is incredible. We have a colour specialist opening — interested?", time:"Yesterday" },
-];
+const SEED_MESSAGES = [];
 
 const TYPE_COLORS = {
   "Full-Time":  { bg:"#2d1a4d", text:"#c084fc" },
@@ -934,11 +917,7 @@ function AuthPanel({ mode, setMode, onLogin, profiles, updateProfiles }) {
       )}
       <Input label="Email" value={form.email} onChange={set("email")} placeholder="you@example.com" type="email" />
       <Input label="Password" value={form.password} onChange={set("password")} placeholder="••••••••" type="password" />
-      {mode==="login" && (
-        <div style={{ background:C.surface2, borderRadius:8, padding:"10px 14px", marginBottom:16, fontSize:"0.8rem", color:C.muted }}>
-          Demo accounts: <strong style={{color:C.purple3}}>jade@hairwork.com</strong> / <strong style={{color:C.purple3}}>marco@hairwork.com</strong> / <strong style={{color:C.purple3}}>owner@hairwork.com</strong> — all password: <strong style={{color:C.purple3}}>demo</strong>
-        </div>
-      )}
+
       <Btn onClick={mode==="login"?handleLogin:handleSignup} style={{ width:"100%", marginBottom:14 }}>
         {mode==="login"?"Log In":"Create Account"}
       </Btn>
